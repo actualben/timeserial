@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const helpText string = `usage: %s [-h] [-e] [-i] [-n] [-u]
+const helpText string = `usage: %s [-h] [-e] [-i] [-n] [-u] [file ...]
 
 For each file given on the command line, replace any instances of the template
 text %s with a 10-digit number suitable for use as a DNS zone
