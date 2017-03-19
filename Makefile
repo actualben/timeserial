@@ -1,4 +1,4 @@
-PROGRAMS = utils/dnsts utils/timeserializer
+PROGRAMS = dnsts/dnsts timeserializer/timeserializer
 BUILD = go build -ldflags="-s -w" -v
 .PHONY: all clean
 
