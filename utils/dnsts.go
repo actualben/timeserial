@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/actualben/timeserial"
 	"os"
 	"time"
 )
@@ -31,5 +32,5 @@ func main() {
 	if useUTC {
 		t = t.UTC()
 	}
-	fmt.Println(TimeSerial(t))
+	fmt.Println(timeserial.TimeSerial(t))
 }

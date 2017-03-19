@@ -1,10 +1,10 @@
-PROGRAMS = timeserial timeserializer
+PROGRAMS = utils/dnsts utils/timeserializer
 BUILD = go build -ldflags="-s -w" -v
 .PHONY: all clean
 
 all: $(PROGRAMS)
 
-$(PROGRAMS):%:%.go shared.go
+$(PROGRAMS):%:%.go
 	@echo "===> Buiding $@ from $<"
 	go fmt $^
 	go vet $^
