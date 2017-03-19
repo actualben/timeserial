@@ -20,13 +20,11 @@ since midnight.
 
 func main() {
 	useUTC := false
-
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, helpText, os.Args[0])
 		flag.PrintDefaults()
 	}
-	flag.BoolVar(&useUTC, "u", false,
-		"Use the UTC time zone instead of localtime")
+	flag.BoolVar(&useUTC, "u", useUTC, "Use UTC instead of local time")
 	flag.Parse()
 
 	t := time.Now()
