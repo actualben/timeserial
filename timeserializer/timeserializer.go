@@ -1,13 +1,11 @@
-package main
+package timeserializer
 
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"github.com/actualben/timeserial/timeserial"
 	"os"
 	"regexp"
-	"time"
-	"github.com/actualben/timeserial"
 )
 
 const helpText string = `usage: %s [-h] [-e] [-i] [-n] [-u] [file ...]
@@ -32,13 +30,14 @@ func main() {
 	useNow := false
 	useUTC := false
 	flag.Usage = func() {
-		fmt.Fprintf(os.Stderr, helpText, os.Args[0], token)
+		fmt.Fprintf(os.Stderr, helpText, os.Args[0], timeserial.TemplateToken)
 		flag.PrintDefaults()
 	}
 	flag.BoolVar(&inPlace, "i", inPlace,
 		"Edit the given files in-place")
 	flag.BoolVar(&replaceExisting, "e", replaceExisting, fmt.Sprintf(
-		"Replace existing serial numbers, instead of replacing %s", token))
+		"Replace existing serial numbers, instead of replacing %s",
+		timeserial.TemplateToken))
 	flag.BoolVar(&useNow, "n", useNow,
 		"Use the currrent time, instead of file mtimes")
 	flag.BoolVar(&useUTC, "u", useUTC,
@@ -55,8 +54,8 @@ func main() {
 
 	// Things doing
 	for _, filename := range flag.Args() {
-		matched, content, err := TimeSerialize(filename, regex, useNow,
-			useUTC, inPlace)
+		matched, content, err := timeserial.TimeSerialize(filename, regex,
+			useNow, useUTC, inPlace)
 		if err != nil {
 			fmt.Println(err)
 			continue

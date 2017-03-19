@@ -1,20 +1,17 @@
 package timeserial
 
 import (
-	"flag"
 	"fmt"
 	"io/ioutil"
 	"os"
 	"regexp"
 	"time"
-	"github.com/actualben/timeserial"
 )
 
-
-const token string = `$TIMESERIAL`
+const TemplateToken string = `$TIMESERIAL`
 
 // TemplateTokenRegexp - regular expression matching $TIMESERIAL
-var TemplateTokenRegexp = regexp.MustCompile(regexp.QuoteMeta(token))
+var TemplateTokenRegexp = regexp.MustCompile(regexp.QuoteMeta(TemplateToken))
 
 // SerialNumberRegexp - regular expression matching date-based DNS serial nums
 var SerialNumberRegexp = regexp.MustCompile(`\b20\d\d[01]\d[0123]\d{3}\b`)

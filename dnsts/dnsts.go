@@ -1,9 +1,9 @@
-package main
+package dnsts
 
 import (
 	"flag"
 	"fmt"
-	"github.com/actualben/timeserial"
+	"github.com/actualben/timeserial/timeserial"
 	"os"
 	"time"
 )
