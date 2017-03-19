@@ -3,7 +3,7 @@ package dnsts
 import (
 	"flag"
 	"fmt"
-	"github.com/actualben/timeserial/timeserial"
+	"github.com/actualben/timeserial"
 	"os"
 	"time"
 )

@@ -3,7 +3,7 @@ package timeserializer
 import (
 	"flag"
 	"fmt"
-	"github.com/actualben/timeserial/timeserial"
+	"github.com/actualben/timeserial"
 	"os"
 	"regexp"
 )
