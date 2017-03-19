@@ -1,5 +1,7 @@
 # timeserial
 
+**This is all sub-alpha quality. DON'T USE IT YET!**
+
 Generate timestamps suitable for use in a DNS zone file. There are two programs in this directory:
 
 timeserial prints the serial for the current time to STDOUT
