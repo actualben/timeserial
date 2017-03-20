@@ -1,4 +1,4 @@
-package dnsts
+package main
 
 import (
 	"flag"

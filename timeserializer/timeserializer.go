@@ -1,4 +1,4 @@
-package timeserializer
+package main
 
 import (
 	"flag"
